@@ -52,7 +52,7 @@
         "../public/*"
       ],
       "#mdc-imports": [
-        "./file:/C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/.nuxt/mdc-imports"
+        "./file:/C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/.nuxt/mdc-imports"
       ],
       "#content/server": [
         "../node_modules/@nuxt/content/dist/runtime/legacy/server"

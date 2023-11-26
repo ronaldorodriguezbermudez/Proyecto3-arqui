@@ -25,6 +25,7 @@
 			</div>
 
    </div>
+   <div id="utterances"></div>
    <FooterView />
  </div>
 </template>
@@ -36,4 +37,14 @@
   const { data: models, refresh: rModels } = 
     await useFetch(`https://cms-una.000webhostapp.com/api/content/items/Models?filter={"manufacturer_id._id":"${route.params.slug}"}&fields={"nombre":true}`)
     rModels()
+    onMounted(() => {
+    const s = document.createElement('script');
+    s.src = 'https://utteranc.es/client.js';
+    s.setAttribute('repo', 'ronaldorodriguezbermudez/gestion-comentarios-supercars');
+    s.setAttribute('issue-term', 'pathname');
+    s.setAttribute('theme', 'github-light');
+    s.setAttribute('crossorigin', 'anonymous');
+    s.async = true;
+    document.getElementById('utterances').appendChild(s);
+  });
 </script>

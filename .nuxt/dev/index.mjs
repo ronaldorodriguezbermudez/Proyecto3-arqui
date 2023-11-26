@@ -3,48 +3,48 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { mkdirSync } from 'node:fs';
 import { parentPort, threadId } from 'node:worker_threads';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, isEvent, createEvent, getRequestHeader, eventHandler, setHeaders, sendRedirect, proxyRequest, setResponseHeader, send, getResponseStatus, setResponseStatus, setResponseHeaders, getRequestHeaders, getQuery as getQuery$1, getCookie, createError, createApp, createRouter as createRouter$1, toNodeListener, fetchWithEvent, lazyEventHandler, getResponseStatusText } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/h3/dist/index.mjs';
-import { getRequestDependencies, getPreloadLinks, getPrefetchLinks, createRenderer } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/vue-bundle-renderer/dist/runtime.mjs';
-import { stringify, uneval } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/devalue/index.js';
-import { renderToString } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/vue/server-renderer/index.mjs';
-import { renderSSRHead } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/@unhead/ssr/dist/index.mjs';
-import { createFetch as createFetch$1, Headers as Headers$1 } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/ofetch/dist/node.mjs';
-import destr, { destr as destr$1 } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/destr/dist/index.mjs';
-import { createCall, createFetch } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/unenv/runtime/fetch/index.mjs';
-import { createHooks } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/hookable/dist/index.mjs';
-import { snakeCase, kebabCase, pascalCase, camelCase } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/scule/dist/index.mjs';
-import { klona } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/klona/dist/index.mjs';
-import defu, { defuFn, defu as defu$1 } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/defu/dist/defu.mjs';
-import { hash } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/ohash/dist/index.mjs';
-import { parseURL, withoutBase, joinURL, getQuery, withQuery, withLeadingSlash, withoutTrailingSlash, isRelative } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/ufo/dist/index.mjs';
-import { createStorage, prefixStorage } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/unstorage/dist/index.mjs';
-import unstorage_47drivers_47fs from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/unstorage/drivers/fs.mjs';
-import { toRouteMatcher, createRouter } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/radix3/dist/index.mjs';
-import { extname } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/pathe/dist/index.mjs';
-import { unified } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/unified/index.js';
-import { toString } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/mdast-util-to-string/index.js';
-import { postprocess, preprocess } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/micromark/dev/index.js';
-import { stringifyPosition } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/unist-util-stringify-position/index.js';
-import { markdownLineEnding, markdownSpace } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/micromark-util-character/dev/index.js';
-import { push, splice } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/micromark-util-chunked/dev/index.js';
-import { resolveAll } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/micromark-util-resolve-all/index.js';
-import { normalizeUri } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/micromark-util-sanitize-uri/dev/index.js';
-import slugify from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/slugify/slugify.js';
-import remarkParse from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/remark-parse/index.js';
-import remark2rehype from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/remark-rehype/index.js';
-import remarkMDC, { parseFrontMatter } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/remark-mdc/dist/index.mjs';
-import { toString as toString$1 } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/hast-util-to-string/index.js';
-import Slugger from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/github-slugger/index.js';
-import { detab } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/detab/index.js';
-import remarkEmoji from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/remark-emoji/index.js';
-import remarkGFM from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/remark-gfm/index.js';
-import rehypeExternalLinks from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/rehype-external-links/index.js';
-import rehypeSortAttributeValues from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/rehype-sort-attribute-values/index.js';
-import rehypeSortAttributes from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/rehype-sort-attributes/index.js';
-import rehypeRaw from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/rehype-raw/index.js';
-import { version, unref } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/vue/index.mjs';
-import { createServerHead as createServerHead$1 } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/unhead/dist/index.mjs';
-import { defineHeadPlugin } from 'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/@unhead/shared/dist/index.mjs';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, isEvent, createEvent, getRequestHeader, eventHandler, setHeaders, sendRedirect, proxyRequest, setResponseHeader, send, getResponseStatus, setResponseStatus, setResponseHeaders, getRequestHeaders, getQuery as getQuery$1, getCookie, createError, createApp, createRouter as createRouter$1, toNodeListener, fetchWithEvent, lazyEventHandler, getResponseStatusText } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/h3/dist/index.mjs';
+import { getRequestDependencies, getPreloadLinks, getPrefetchLinks, createRenderer } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/vue-bundle-renderer/dist/runtime.mjs';
+import { stringify, uneval } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/devalue/index.js';
+import { renderToString } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/vue/server-renderer/index.mjs';
+import { renderSSRHead } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/@unhead/ssr/dist/index.mjs';
+import { createFetch as createFetch$1, Headers as Headers$1 } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/ofetch/dist/node.mjs';
+import destr, { destr as destr$1 } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/destr/dist/index.mjs';
+import { createCall, createFetch } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/unenv/runtime/fetch/index.mjs';
+import { createHooks } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/hookable/dist/index.mjs';
+import { snakeCase, kebabCase, pascalCase, camelCase } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/scule/dist/index.mjs';
+import { klona } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/klona/dist/index.mjs';
+import defu, { defuFn, defu as defu$1 } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/defu/dist/defu.mjs';
+import { hash } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/ohash/dist/index.mjs';
+import { parseURL, withoutBase, joinURL, getQuery, withQuery, withLeadingSlash, withoutTrailingSlash, isRelative } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/ufo/dist/index.mjs';
+import { createStorage, prefixStorage } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/unstorage/dist/index.mjs';
+import unstorage_47drivers_47fs from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/unstorage/drivers/fs.mjs';
+import { toRouteMatcher, createRouter } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/radix3/dist/index.mjs';
+import { extname } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/pathe/dist/index.mjs';
+import { unified } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/unified/index.js';
+import { toString } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/mdast-util-to-string/index.js';
+import { postprocess, preprocess } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/micromark/dev/index.js';
+import { stringifyPosition } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/unist-util-stringify-position/index.js';
+import { markdownLineEnding, markdownSpace } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/micromark-util-character/dev/index.js';
+import { push, splice } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/micromark-util-chunked/dev/index.js';
+import { resolveAll } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/micromark-util-resolve-all/index.js';
+import { normalizeUri } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/micromark-util-sanitize-uri/dev/index.js';
+import slugify from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/slugify/slugify.js';
+import remarkParse from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/remark-parse/index.js';
+import remark2rehype from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/remark-rehype/index.js';
+import remarkMDC, { parseFrontMatter } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/remark-mdc/dist/index.mjs';
+import { toString as toString$1 } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/hast-util-to-string/index.js';
+import Slugger from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/github-slugger/index.js';
+import { detab } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/detab/index.js';
+import remarkEmoji from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/remark-emoji/index.js';
+import remarkGFM from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/remark-gfm/index.js';
+import rehypeExternalLinks from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/rehype-external-links/index.js';
+import rehypeSortAttributeValues from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/rehype-sort-attribute-values/index.js';
+import rehypeSortAttributes from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/rehype-sort-attributes/index.js';
+import rehypeRaw from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/rehype-raw/index.js';
+import { version, unref } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/vue/index.mjs';
+import { createServerHead as createServerHead$1 } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/unhead/dist/index.mjs';
+import { defineHeadPlugin } from 'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/@unhead/shared/dist/index.mjs';
 
 const r=Object.create(null),t=e=>globalThis.process?.env||globalThis._importMeta_.env||globalThis.Deno?.env.toObject()||globalThis.__env__||(e?r:globalThis),s=new Proxy(r,{get(e,o){return t()[o]??r[o]},has(e,o){const i=t();return o in i||o in r},set(e,o,i){const p=t(!0);return p[o]=i,!0},deleteProperty(e,o){if(!o)return !1;const i=t(!0);return delete i[o],!0},ownKeys(){const e=t(!0);return Object.keys(e)}}),E=typeof process<"u"&&process.env&&"development"||"",d=[["APPVEYOR"],["AWS_AMPLIFY","AWS_APP_ID",{ci:!0}],["AZURE_PIPELINES","SYSTEM_TEAMFOUNDATIONCOLLECTIONURI"],["AZURE_STATIC","INPUT_AZURE_STATIC_WEB_APPS_API_TOKEN"],["APPCIRCLE","AC_APPCIRCLE"],["BAMBOO","bamboo_planKey"],["BITBUCKET","BITBUCKET_COMMIT"],["BITRISE","BITRISE_IO"],["BUDDY","BUDDY_WORKSPACE_ID"],["BUILDKITE"],["CIRCLE","CIRCLECI"],["CIRRUS","CIRRUS_CI"],["CLOUDFLARE_PAGES","CF_PAGES",{ci:!0}],["CODEBUILD","CODEBUILD_BUILD_ARN"],["CODEFRESH","CF_BUILD_ID"],["DRONE"],["DRONE","DRONE_BUILD_EVENT"],["DSARI"],["GITHUB_ACTIONS"],["GITLAB","GITLAB_CI"],["GITLAB","CI_MERGE_REQUEST_ID"],["GOCD","GO_PIPELINE_LABEL"],["LAYERCI"],["HUDSON","HUDSON_URL"],["JENKINS","JENKINS_URL"],["MAGNUM"],["NETLIFY"],["NETLIFY","NETLIFY_LOCAL",{ci:!1}],["NEVERCODE"],["RENDER"],["SAIL","SAILCI"],["SEMAPHORE"],["SCREWDRIVER"],["SHIPPABLE"],["SOLANO","TDDIUM"],["STRIDER"],["TEAMCITY","TEAMCITY_VERSION"],["TRAVIS"],["VERCEL","NOW_BUILDER"],["VERCEL","VERCEL",{ci:!1}],["VERCEL","VERCEL_ENV",{ci:!1}],["APPCENTER","APPCENTER_BUILD_ID"],["CODESANDBOX","CODESANDBOX_SSE",{ci:!1}],["STACKBLITZ"],["STORMKIT"],["CLEAVR"]];function B(){if(globalThis.process?.env)for(const e of d){const o=e[1]||e[0];if(globalThis.process?.env[o])return {name:e[0].toLowerCase(),...e[2]}}return globalThis.process?.env?.SHELL==="/bin/jsh"&&globalThis.process?.versions?.webcontainer?{name:"stackblitz",ci:!1}:{name:"",ci:!1}}const I=B(),P=I.name;function n(e){return e?e!=="false":!1}const l=globalThis.process?.platform||"",T=n(s.CI)||I.ci!==!1,a=n(globalThis.process?.stdout&&globalThis.process?.stdout.isTTY);n(s.DEBUG);const c=E==="test"||n(s.TEST);n(s.MINIMAL)||T||c||!a;const C=/^win/i.test(l);!n(s.NO_COLOR)&&(n(s.FORCE_COLOR)||C&&s.TERM!=="dumb"||a&&s.TERM&&s.TERM==="dumb"||T);const R=(globalThis.process?.versions?.node||"").replace(/^v/,"")||null;Number(R?.split(".")[0])||null;const w=globalThis.process||Object.create(null),_={versions:{}};new Proxy(w,{get(e,o){if(o==="env")return s;if(o in e)return e[o];if(o in _)return _[o]}});const L=!!globalThis.Netlify,A=!!globalThis.EdgeRuntime,O=globalThis.navigator?.userAgent==="Cloudflare-Workers",D=!!globalThis.Deno,u=!!globalThis.__lagon__,N=globalThis.process?.release?.name==="node",S=!!globalThis.Bun||!!globalThis.process?.versions?.bun,b=!!globalThis.fastly,G=[[L,"netlify"],[A,"edge-light"],[O,"workerd"],[D,"deno"],[u,"lagon"],[N,"node"],[S,"bun"],[b,"fastly"]];function K(){const e=G.find(o=>o[0]);if(e)return {name:e[1]}}const g=K();g?.name||"";
 
@@ -346,7 +346,7 @@ new Proxy(/* @__PURE__ */ Object.create(null), {
   }
 });
 
-const serverAssets = [{"baseName":"server","dir":"C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto 3/server/assets"}];
+const serverAssets = [{"baseName":"server","dir":"C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/server/assets"}];
 
 const assets = createStorage();
 
@@ -358,13 +358,13 @@ const storage = createStorage({});
 
 storage.mount('/assets', assets);
 
-storage.mount('content:source:content', unstorage_47drivers_47fs({"name":"content:source:content","driver":"fs","base":"C:\\Users\\Ronaldo\\Documents\\UNA\\Arqui\\Proyecto-2-Arquitectura\\Proyecto 3\\content","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('cache:content', unstorage_47drivers_47fs({"driver":"fs","base":"C:\\Users\\Ronaldo\\Documents\\UNA\\Arqui\\Proyecto-2-Arquitectura\\Proyecto 3\\.nuxt\\content-cache","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:\\Users\\Ronaldo\\Documents\\UNA\\Arqui\\Proyecto-2-Arquitectura\\Proyecto 3","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:\\Users\\Ronaldo\\Documents\\UNA\\Arqui\\Proyecto-2-Arquitectura\\Proyecto 3\\server","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"C:\\Users\\Ronaldo\\Documents\\UNA\\Arqui\\Proyecto-2-Arquitectura\\Proyecto 3\\.nuxt","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"C:\\Users\\Ronaldo\\Documents\\UNA\\Arqui\\Proyecto-2-Arquitectura\\Proyecto 3\\.nuxt\\cache","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"C:\\Users\\Ronaldo\\Documents\\UNA\\Arqui\\Proyecto-2-Arquitectura\\Proyecto 3\\.data\\kv","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('content:source:content', unstorage_47drivers_47fs({"name":"content:source:content","driver":"fs","base":"C:\\Users\\Ronaldo\\Documents\\GitHub\\Proyecto3-arqui\\content","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('cache:content', unstorage_47drivers_47fs({"driver":"fs","base":"C:\\Users\\Ronaldo\\Documents\\GitHub\\Proyecto3-arqui\\.nuxt\\content-cache","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:\\Users\\Ronaldo\\Documents\\GitHub\\Proyecto3-arqui","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:\\Users\\Ronaldo\\Documents\\GitHub\\Proyecto3-arqui\\server","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"C:\\Users\\Ronaldo\\Documents\\GitHub\\Proyecto3-arqui\\.nuxt","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"C:\\Users\\Ronaldo\\Documents\\GitHub\\Proyecto3-arqui\\.nuxt\\cache","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"C:\\Users\\Ronaldo\\Documents\\GitHub\\Proyecto3-arqui\\.data\\kv","ignore":["**/node_modules/**","**/.git/**"]}));
 
 function useStorage(base = "") {
   return base ? prefixStorage(storage, base) : storage;
@@ -791,14 +791,14 @@ if (!window.__NUXT_DEVTOOLS_TIME_METRIC__) {
 window.__NUXT_DEVTOOLS_TIME_METRIC__.appInit = Date.now()
 `;
 
-const _AoJQJxeNcN = (function(nitro) {
+const _5yXfk885rg = (function(nitro) {
   nitro.hooks.hook("render:html", (htmlContext) => {
     htmlContext.head.push(`<script>${script}<\/script>`);
   });
 });
 
 const plugins = [
-  _AoJQJxeNcN
+  _5yXfk885rg
 ];
 
 function defineRenderHandler(handler) {
@@ -2355,7 +2355,7 @@ let moduleOptions;
 const parseMarkdown = async (md, opts = {}) => {
   if (!moduleOptions) {
     moduleOptions = await import(
-      'file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/.nuxt/mdc-imports.mjs'
+      'file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/.nuxt/mdc-imports.mjs'
       /* @vite-ignore */
     ).catch(() => ({}));
   }
@@ -2570,7 +2570,7 @@ const json = defineTransformer({
     let parsed;
     if (typeof content === "string") {
       if (_id.endsWith("json5")) {
-        parsed = (await import('file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/node_modules/json5/lib/index.js').then((m) => m.default || m)).parse(content);
+        parsed = (await import('file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/json5/lib/index.js').then((m) => m.default || m)).parse(content);
       } else if (_id.endsWith("json")) {
         parsed = destr$1(content);
       }
@@ -3163,7 +3163,7 @@ const getContentQuery = (event) => {
   return query;
 };
 
-const _RCmbOH = defineEventHandler(async (event) => {
+const _zIlyVI = defineEventHandler(async (event) => {
   const query = getContentQuery(event);
   const { advanceQuery } = useRuntimeConfig().public.content.experimental;
   if (query.first) {
@@ -3192,7 +3192,7 @@ const _RCmbOH = defineEventHandler(async (event) => {
   return serverQueryContent(event, query).find();
 });
 
-const _jXCEg8 = defineEventHandler(async (event) => {
+const _X3WUOU = defineEventHandler(async (event) => {
   const { content } = useRuntimeConfig();
   const now = Date.now();
   const contents = await serverQueryContent(event).find();
@@ -3294,7 +3294,7 @@ function isObject(obj) {
   return Object.prototype.toString.call(obj) === "[object Object]";
 }
 
-const _cktX4w = defineEventHandler(async (event) => {
+const _yxNNaK = defineEventHandler(async (event) => {
   const query = getContentQuery(event);
   if (!isPreview(event) && Object.keys(query).length === 0) {
     const cache = await cacheStorage.getItem("content-navigation.json");
@@ -3331,18 +3331,18 @@ const _cktX4w = defineEventHandler(async (event) => {
   return createNav(contents?.result || contents, configs);
 });
 
-const _lazy_3C5O8C = () => Promise.resolve().then(function () { return renderer$1; });
+const _lazy_zRdgRG = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
-  { route: '/__nuxt_error', handler: _lazy_3C5O8C, lazy: true, middleware: false, method: undefined },
-  { route: '/api/_content/query/:qid/**:params', handler: _RCmbOH, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/query/:qid', handler: _RCmbOH, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/query', handler: _RCmbOH, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/cache.json', handler: _jXCEg8, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/navigation/:qid/**:params', handler: _cktX4w, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/navigation/:qid', handler: _cktX4w, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/navigation', handler: _cktX4w, lazy: false, middleware: false, method: "get" },
-  { route: '/**', handler: _lazy_3C5O8C, lazy: true, middleware: false, method: undefined }
+  { route: '/__nuxt_error', handler: _lazy_zRdgRG, lazy: true, middleware: false, method: undefined },
+  { route: '/api/_content/query/:qid/**:params', handler: _zIlyVI, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/query/:qid', handler: _zIlyVI, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/query', handler: _zIlyVI, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/cache.json', handler: _X3WUOU, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/navigation/:qid/**:params', handler: _yxNNaK, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/navigation/:qid', handler: _yxNNaK, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/navigation', handler: _yxNNaK, lazy: false, middleware: false, method: "get" },
+  { route: '/**', handler: _lazy_zRdgRG, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {
@@ -3590,8 +3590,8 @@ const appRootTag = "div";
 
 globalThis.__buildAssetsURL = buildAssetsURL;
 globalThis.__publicAssetsURL = publicAssetsURL;
-const getClientManifest = () => import('file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/.nuxt/dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
-const getServerEntry = () => import('file://C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto%203/.nuxt/dist/server/server.mjs').then((r) => r.default || r);
+const getClientManifest = () => import('file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/.nuxt/dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
+const getServerEntry = () => import('file://C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/.nuxt/dist/server/server.mjs').then((r) => r.default || r);
 const getSSRStyles = lazyCachedFunction(() => Promise.resolve().then(function () { return styles$1; }).then((r) => r.default || r));
 const getSSRRenderer = lazyCachedFunction(async () => {
   const manifest = await getClientManifest();

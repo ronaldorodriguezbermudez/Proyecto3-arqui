@@ -7,12 +7,12 @@
     "module": true,
     "resourceType": "script"
   },
-  "C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto 3/node_modules/nuxt/dist/app/entry.js": {
+  "C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/nuxt/dist/app/entry.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
     "isEntry": true,
-    "file": "C:/Users/Ronaldo/Documents/UNA/Arqui/Proyecto-2-Arquitectura/Proyecto 3/node_modules/nuxt/dist/app/entry.js"
+    "file": "C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/node_modules/nuxt/dist/app/entry.js"
   }
 }

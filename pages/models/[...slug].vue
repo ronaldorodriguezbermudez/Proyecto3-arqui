@@ -39,8 +39,10 @@
      </div>
      <div class="two columns"></div>
    </div>
+   <div id="utterances"></div>
    <FooterView />
  </div>
+
 </template>
 <script>
 	export default {
@@ -58,5 +60,16 @@
   const { data: model, refresh } = 
     await useFetch(`https://cms-una.000webhostapp.com/api/content/item/Models/${route.params.slug}`)
   refresh()
+  onMounted(() => {
+    const s = document.createElement('script');
+    s.src = 'https://utteranc.es/client.js';
+    s.setAttribute('repo', 'ronaldorodriguezbermudez/gestion-comentarios-supercars');
+    s.setAttribute('issue-term', 'pathname');
+    s.setAttribute('theme', 'github-light');
+    s.setAttribute('crossorigin', 'anonymous');
+    s.async = true;
+    document.getElementById('utterances').appendChild(s);
+  });
+
 </script>
 

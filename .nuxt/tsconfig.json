@@ -63,7 +63,7 @@
         "../node_modules/nuxt/dist/app/compat/vue-demi"
       ],
       "#mdc-imports": [
-        "./mdc-imports"
+        "file:///C:/Users/Ronaldo/Documents/GitHub/Proyecto3-arqui/.nuxt/mdc-imports.mjs"
       ],
       "#vue-router": [
         "./vue-router-stub"
